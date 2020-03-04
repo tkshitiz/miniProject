@@ -5,3 +5,6 @@ Location of this file  is : miniProject/src/javaapplication4/MiniProject/Registr
 
 Output screenshot
 ![java-2](https://user-images.githubusercontent.com/52815756/75880761-fdadc680-5e45-11ea-9b35-7395ea708a96.PNG)
+ 
+ Note: Move kshitiz_java2 database folder in this location: xampp/mysql/data/ to host the database 
+ 
