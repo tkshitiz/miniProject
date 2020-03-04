@@ -71,6 +71,7 @@ class Registration extends JFrame implements ActionListener  {
      JDialog jd;
       JButton jb;  
     JFileChooser chooser;
+   UIManager um;
     
     JLabel vtname;  //**********validation reference for name field***********//   
     JLabel vmobile; //**********validation reference for  mobile**************// 
@@ -125,7 +126,6 @@ class Registration extends JFrame implements ActionListener  {
                 gender = "female";
 
             }
-
             String dob = (String) date.getSelectedItem();
             String dob1 = (String) month.getSelectedItem();
             String dob2 = (String) year.getSelectedItem();
@@ -530,20 +530,10 @@ class Registration extends JFrame implements ActionListener  {
                     res.setForeground(Color.red.darker());
                 } else {
                     this.ConnectMeAndFireQuery();
-                    res.setText("Registration Successfull..");
-                    res.setForeground(Color.green.darker());
-                    this.savingDataInPDF();
-                    
-                    jd=new  JDialog(this , "Registration Form", true);  
-                     jd.setLayout( new FlowLayout(FlowLayout.CENTER) ); 
-                     jb= new JButton ("OK");  
-                    jd.add( new JLabel ("Your Form Data is saved in D drive on your PC. Check it out!!")); 
-                    jd.add(jb);
-                    jd.setSize(370,100);                    
-                   jd.setLocationRelativeTo(null);
-                    jd.setVisible(true);  
-                    
-                        
+                    this.savingDataInPDF();                  
+                    um = new UIManager();//Object for dialog box class//
+		    um.put("Panel.background", Color.lightGray);
+                   JOptionPane.showMessageDialog(this,"Your Form Data is saved in D drive on your PC. Check it out!!", "Registration Successful!!!", JOptionPane.INFORMATION_MESSAGE);                                           
                 }
                  
             } else {    
